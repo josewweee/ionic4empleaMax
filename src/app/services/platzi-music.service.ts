@@ -25,4 +25,10 @@ export class PlatziMusicService {
     .then(response => response.json()
     );
   }
+
+  getAlbumTracks(albumId) {
+    return fetch(
+      `https://platzi-music-api.now.sh/albums/${albumId}/tracks?country=CO`
+    ).then(response => response.json());
+  }
 }

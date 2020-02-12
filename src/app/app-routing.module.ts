@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'songs-modal',
     loadChildren: () => import('./songs-modal/songs-modal.module').then( m => m.SongsModalPageModule)
+  },
+  {
+    path: 'sports',
+    loadChildren: () => import('./sports/sports.module').then( m => m.SportsPageModule)
   }
 ];
 

@@ -88,19 +88,19 @@ export class HomePage {
 
   play() {
     // audio es una API que maneja sonidos
-    this.currentSong = new Audio(this.song.preview_url);
+    /**this.currentSong = new Audio(this.song.preview_url);
     this.currentSong.play();
 
     // tomamos el tiempo actual de la cancion
     this.currentSong.addEventListener("timeupdate", () => {
       this.newTime = (1 / this.currentSong.duration) * this.currentSong.currentTime;
     });
-    this.song.playing = true;
+    this.song.playing = true;**/
   }
 
   pause() {
-    this.currentSong.pause();
-    this.song.playing = false;
+   /** this.currentSong.pause();
+    this.song.playing = false;**/
   }
 
   parseTime(time="0.00") {

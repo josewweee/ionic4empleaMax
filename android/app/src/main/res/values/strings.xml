@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">empleaMAX</string>
+    <string name="title_activity_main">empleaMAX</string>
+    <string name="package_name">emplea.MAX.com</string>
+    <string name="custom_url_scheme">emplea.MAX.com</string>
+</resources>

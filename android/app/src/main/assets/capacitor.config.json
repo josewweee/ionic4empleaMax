@@ -1,0 +1,8 @@
+{
+  "appId": "emplea.MAX.com",
+  "appName": "empleaMAX",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

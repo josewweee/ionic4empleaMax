@@ -38,15 +38,33 @@ export class HomePage {
 
   async showSongs(artist) {
     const songs = await this.musicService.getArtistTopTracks(artist.id);
+    // pasos para crear el modal
     const modal = await this.modalController.create({
+      // pagina que abrira el modal
       component: SongsModalPage,
+      // datos que le enviamos al modal
       componentProps: {
         songs: songs.tracks,
         artist: artist.name
       }
     });
-    
+
+    // esto se ejecuta cuando se cierra el modal
+    modal.onDidDismiss()
+    .then(dataReturned => {
+      this.song = dataReturned.data;
+    });
+
+    // para abrir el modal
     return await modal.present();
+  }
+
+  play() {
+    this.song.playing = true;
+  }
+
+  pause() {
+    this.song.playing = false;
   }
   
 

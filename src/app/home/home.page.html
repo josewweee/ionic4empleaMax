@@ -10,7 +10,7 @@
   <!-- slideOps son las opciones del slide -->
   <ion-slides [options]="slideOps" *ngIf="artists.length">
     <ion-slide *ngFor="let artist of artists">
-      <ion-avatar>
+      <ion-avatar (click)="showSongs(artist)">
         <!-- [src] es para conectar variables en angular-->
         <img [src]="artist.images[0].url" />
         <span>{{ artist.name }}</span>
@@ -38,3 +38,12 @@
     </ion-slide>
   </ion-slides>
 </ion-content>
+
+<ion-footer>
+  <ion-text color="danger" *ngIf="!song.name">
+    <h2>Aqui aparecera nuestra cancion</h2>
+  </ion-text>
+  <ion-text color="primary" *ngIf="song.name">
+    <h2>{{song.name}}</h2>
+  </ion-text>
+</ion-footer>

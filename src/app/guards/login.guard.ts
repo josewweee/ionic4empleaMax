@@ -9,6 +9,7 @@ import { Storage } from '@ionic/storage';
 export class LoginGuard implements CanActivate  {
   constructor(private storage: Storage, private router: Router){}
 
+  // funcion para pasar al /home si el usuario ya esta loggeado
   async canActivate() {
     const isUserLoggedIn = await this.storage.get('isUserLoggedIn');
     if (isUserLoggedIn) {

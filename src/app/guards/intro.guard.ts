@@ -11,6 +11,7 @@ export class IntroGuard implements CanActivate {
   
   constructor(private storage: Storage, private router: Router){}
 
+  // funcion para pasar al /home si ya vimos el intro
   async canActivate() {
     const isIntroShowed = await this.storage.get('isIntroShowed');
     if (isIntroShowed) {

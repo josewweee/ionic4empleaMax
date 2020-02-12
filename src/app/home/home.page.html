@@ -6,22 +6,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <h1>Albums</h1>
-  <ion-slides [options]="slideOps" *ngIf="albums.length">
-    <ion-slide *ngFor="let album of albums">
+  <h1>Artists</h1>
+  <!-- slideOps son las opciones del slide -->
+  <ion-slides [options]="slideOps" *ngIf="artists.length">
+    <ion-slide *ngFor="let artist of artists">
       <ion-avatar>
-        <!-- <img src="albums.images[0].url"/> -->
-        <span>{{album.name}}</span>
+        <!-- [src] es para conectar variables en angular-->
+        <img [src]="artist.images[0].url" />
+        <span>{{ artist.name }}</span>
       </ion-avatar>
     </ion-slide>
   </ion-slides>
 
   <h1>Albums</h1>
-  <ion-slides [options]="slideOps" *ngIf="songs.length">
-    <ion-slide *ngFor="let song of songs">
-      <ion-avatar>
-        <!-- <img src="albums.images[0].url"/> -->
-        <span>{{song.name}}</span>
+  <ion-slides [options]="slideOps" *ngIf="albums.length">
+    <ion-slide *ngFor="let album of albums">
+      <ion-avatar class="square-avatar">
+        <img [src]="album.images[0].url" />
+        <span>{{ album.name }}</span>
       </ion-avatar>
     </ion-slide>
   </ion-slides>
@@ -29,8 +31,8 @@
   <h1>Songs</h1>
   <ion-slides [options]="slideOps" *ngIf="songs.length">
     <ion-slide *ngFor="let song of songs">
-      <ion-avatar>
-       <!--  <img src="songs.images[0].url"/> -->
+      <ion-avatar class="square-avatar">
+        <img [src]="song.images[0].url"/>
         <span>{{song.name}}</span>
       </ion-avatar>
     </ion-slide>

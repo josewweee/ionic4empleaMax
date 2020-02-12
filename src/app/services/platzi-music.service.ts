@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import * as dataArtists from './artists.json';
 
 @Injectable({
   providedIn: 'root'
 })
+
+// servicio para manejar los datos de musica
 export class PlatziMusicService {
 
   constructor() { }
@@ -11,5 +14,9 @@ export class PlatziMusicService {
     return fetch('https://platzi-music-api.now.sh/browse/new-releases')
     .then(response => response.json()
     );
+  }
+
+  getArtists() {
+    return dataArtists.items;
   }
 }

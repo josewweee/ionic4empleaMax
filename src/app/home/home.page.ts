@@ -8,7 +8,6 @@ import { PlatziMusicService } from '../services/platzi-music.service';
 })
 export class HomePage {
 
-  artists = [{}, {}, {}, {}, {}, {}, {}, {}];
   slideOps = {
     initialSlide: 2,
     slidesPerView: 4,
@@ -17,17 +16,19 @@ export class HomePage {
   };
   songs: any[] = [];
   albums: any[] = [];
+  artists: any[] = [];
+  // los servicios se encargan del manejo de los datos
   constructor(private musicService: PlatziMusicService) {}
 
+  // ejecutamos lo que este aqui luego de que el usuario entre a la pagina y se ejecute el HTML
   ionViewDidEnter() {
     this.musicService.getNewReleases()
     .then(newReleases => {
-      this.artists = newReleases.albums.items;
-      console.log(this.artists);
-      this.songs = newReleases.albums.items.filter(e => e.type.contains('single'));
-      console.log(this.songs);
-      this.albums = newReleases.albums.items.filter(e => e.type == 'album');
+      this.artists = this.musicService.getArtists();
+      this.songs = newReleases.albums.items.filter(e => e.album_type == "single");
+      this.albums = newReleases.albums.items.filter(e => e.album_type == 'album');
     });
   }
+  
 
 }

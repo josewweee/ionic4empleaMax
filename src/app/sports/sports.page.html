@@ -9,21 +9,21 @@
 
 <ion-content>
   <!-- MOSTRAMOS EL MAPA DE GOOGLE MAPS -->
-<!--  <agm-map
+    <agm-map
     *ngIf="currentCenter"
     [latitude]="currentCenter.lat"
     [longitude]="currentCenter.lng"
-    [zoom]="defaultZoom"> -->
+    [zoom]="defaultZoom">
      <!-- MOSTRAMOS UN ICONO EN DOND ESTA EL USUARIO -->
-  <!--  <agm-marker
+    <agm-marker
     [latitude]="currentCenter.lat"
     [longitude]="currentCenter.lng"
     iconUrl="assets/img/bicycle.png">
-    </agm-marker> -->
+    </agm-marker>
 
     
      <!-- MOSTRAMOS UNA LINEA DE DONDE SE HA MOVIDO EL USUARIO -->
-  <!--  <agm-polyline [strokeColor]="'red'" *ngIf="coordinates">
+  <agm-polyline [strokeColor]="'red'" *ngIf="coordinates">
       <agm-polyline-point
         *ngFor="let coords of coordinates"
         [latitude]="coords.lat"
@@ -31,7 +31,7 @@
       </agm-polyline-point>
     </agm-polyline>
 
-  </agm-map> -->
+  </agm-map>
 
   <!-- BUSCADOR -->
   <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchSongs()"></ion-searchbar>

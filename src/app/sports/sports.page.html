@@ -1,9 +1,52 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>sports</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- MOSTRAMOS EL MAPA DE GOOGLE MAPS -->
+<!--  <agm-map
+    *ngIf="currentCenter"
+    [latitude]="currentCenter.lat"
+    [longitude]="currentCenter.lng"
+    [zoom]="defaultZoom"> -->
+     <!-- MOSTRAMOS UN ICONO EN DOND ESTA EL USUARIO -->
+  <!--  <agm-marker
+    [latitude]="currentCenter.lat"
+    [longitude]="currentCenter.lng"
+    iconUrl="assets/img/bicycle.png">
+    </agm-marker> -->
 
+    
+     <!-- MOSTRAMOS UNA LINEA DE DONDE SE HA MOVIDO EL USUARIO -->
+  <!--  <agm-polyline [strokeColor]="'red'" *ngIf="coordinates">
+      <agm-polyline-point
+        *ngFor="let coords of coordinates"
+        [latitude]="coords.lat"
+        [longitude]="coords.lng">
+      </agm-polyline-point>
+    </agm-polyline>
+
+  </agm-map> -->
+
+  <!-- BUSCADOR -->
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchSongs()"></ion-searchbar>
+  <div>
+    <ion-list>
+      <ion-item *ngFor="let song of songs; index as i">
+        <ion-avatar>
+          {{i+1}}
+        </ion-avatar>
+        <ion-label>
+          <h2>{{song.name}}</h2>
+        </ion-label>
+        <ion-icon name="play" (click)="play(song)" *ngIf="!song.playing"></ion-icon>
+        <ion-icon name="pause" (click)="pause(song)" *ngIf="song.playing"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
